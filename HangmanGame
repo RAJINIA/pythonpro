@@ -1,0 +1,39 @@
+import time
+name = str("What is your name? ")
+print("Hello, " + name, "Time to play hangman!")
+
+time.sleep(1)
+
+print("Start your guess...")
+time.sleep(0.5)
+
+word = "Hello"
+
+guesses = ''
+
+chances = 10
+
+while chances > 0:
+    failed = 0
+    for char in word:
+        if char in guesses:
+            print(char)
+        else:
+            print("_")
+            failed += 1
+    if failed == 0:
+        print(" You won!! ")
+break
+
+guess = str("guess a character:")
+
+guess += guess
+
+if guess not in word:
+    chances -= 1
+    print(" Wrong ")
+
+print(" You have", + chances, 'more guesses')
+
+if turns == 0:
+    print( "You Lost The Game")
