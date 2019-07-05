@@ -1,0 +1,40 @@
+'''GUESSING GAME'''
+
+import random
+
+start_range = int(input("Enter the start range : "))
+end_range = int(input("Enter the end range : "))
+
+random_number = random.randint(start_range, end_range)
+
+first = str(start_range)
+last = str(end_range)
+
+numofguess = int(input("Enter number of guess : "))
+
+
+count = 0
+
+while count < numofguess:
+    print("Make a Guess .....")
+    guess_number = int(input("Enter an integer from " + first + " to " + last + ": "))
+
+    count = count + 1
+
+    if guess_number < random_number:
+        print("guess is low")
+    elif guess_number > random_number:
+        print("guess is high")
+    elif guess_number == random_number:
+        print("you guessed it!")
+        break
+
+ran_num = str(random_number)
+
+if guess_number == random_number:
+    count_num = str(count)
+    print("congrats!! you guessed the number in " + count_num + " attempts")
+else:
+    print("Sorry, you missed your chances, The random number was " + ran_num)
+
+
